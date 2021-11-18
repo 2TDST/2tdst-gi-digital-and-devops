@@ -1,4 +1,14 @@
-## FIAP | GLOBAL IMPACT | 2TDST | 2021
+
+---
+![FIAP-2TDST](https://img.shields.io/badge/FIAP-2TDST-blueviolet?style=flat-square)
+![project-global_impact](https://img.shields.io/badge/project-global_impact-blueviolet?style=flat-square)
+![spring-boot](https://img.shields.io/badge/spring-boot-yellowgreen?style=flat-square)
+![Java-JDK](https://img.shields.io/badge/Java-JDK-red?style=flat-square)
+![framework-hibernate](https://img.shields.io/badge/framework-hibernate-yellow?style=flat-square)
+![template_engine-thymeleaf](https://img.shields.io/badge/template_engine-thymeleaf-brightgreen?style=flat-square)
+![persistence-jpa](https://img.shields.io/badge/persistence-jpa-yellow?style=flat-square)
+![community-mysql](https://img.shields.io/badge/community-mysql-orange?style=flat-square)
+---
 #### SQUAD: SLASHICORP
 #### STUDENTS:
 
@@ -6,12 +16,12 @@
 - [RM84082 - Dihogo Cassimiro Teixeira](https://www.linkedin.com/in/dihogoteixeira/)
 - [RM85833 - Fernando Borgatto Bouman](https://www.linkedin.com/in/fernando-borgatto-bouman-821534b9/)
 - [RM86486 - Paloma Rangel Rocha](https://www.linkedin.com/in/palomara/)
-- [RM85468 - Juan Carlos Benvive Serrano]()
-
+- [RM85468 - Juan Carlos Benvive Serrano](https://www.linkedin.com/in/juan-carlos-benvive-serrano-529615195/)
+---
 #### SUBJECTS:
 - DIGITAL BUSINESS ENABLEMENT 
 - DEVOPS TOOLS AND CLOUD COMPUTING
-
+---
 #### TECHNOLOGIES:
 - Spring Boot
 - JPA
@@ -20,7 +30,7 @@
 - [Maven (v3+)](https://maven.apache.org/download.cgi)
 - MySQL
 - Thymeleaf
-
+---
 #### APPLICATION PURPOSE:
 <ul>
     The purpose of this application is to provide an API with Brazilian ONGs data by type of segment,
@@ -29,6 +39,7 @@
     for regulated Brazilian ONGs so that you can work with their data.
 </ul>
 
+---
 #### REQUIREMENTS INSTALLATION PER DISTRO
 - [Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)
 - [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
@@ -36,25 +47,50 @@
 - [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [Install Docker Desktop on Mac](https://docs.docker.com/desktop/mac/install/)
 - [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)
+---
+#### RUNNING ON LOCAL DOCKER ENV
 
-#### RUNNING ON LOCAL ENV DOCKER
+Before you beginning, let's clone the project:
+
 ```bash
-git clone https://github.com/2TDST/2tdst-gi-digital-and-devops.git && \
-cd 2tdst-gi-digital-and-devops && \
+git clone https://github.com/2TDST/2tdst-gi-digital-and-devops.git
+cd 2tdst-gi-digital-and-devops
+```
+
+Now, in this same local path `src/main/resources/` open that **application.properties** file resources config,
+comment the session:
+
+```yaml 
+spring.datasource.url=jdbc:$CLEARDB_DATABASE_URL
+```
+
+and then, remove comment of all these settings, in the same file
+
+```yaml
+spring.datasource.url=jdbc:mysql://localhost:3306/gi_ods_db?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+spring.datasource.username=root
+spring.datasource.password=root
+```
+
+#### EXECUTING APP WITH DOCKER-COMPOSE
+
+```bash
 docker-compose up -d
 ```
 
 #### CHECK ENV APPLICATION
 ```bash
 $ docker ps
-CONTAINER ID   IMAGE                            COMMAND                  CREATED         STATUS         PORTS                                                  NAMES
-ffd96ae4345d   springboot-dbe-ods_ods-backend   "java -jar /app.jar"     7 seconds ago   Up 6 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp              springboot-dbe-ods_ods-backend_1
-d85dec1876d8   mysql:5.7                        "docker-entrypoint.s…"   7 seconds ago   Up 6 seconds   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   springboot-dbe-ods_mysqldb_1
+---
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                                                  NAMES
+ffd96ae4345d   springboot-dbe-ods_web   "java -jar /app.jar"     7 seconds ago   Up 6 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp              springboot-dbe-ods_web_1
+d85dec1876d8   springboot-dbe-ods_db    "docker-entrypoint.s…"   7 seconds ago   Up 6 seconds   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   springboot-dbe-ods_db_1
+---
 ```
 
-### LOCALHOST UI VALIDATION
+#### OPEN APP ON LOCALHOST
 
-Click [here](http://localhost:8080/) to check UI `Thymeleaf` on application.
+Click [here](http://localhost:8080/) to check UI **Thymeleaf**, on your docker local env.
 
 `Ong List Page`
 
@@ -68,5 +104,7 @@ Click [here](http://localhost:8080/) to check UI `Thymeleaf` on application.
 
 ![ong_update_page](imgs/ong_update_page.png)
 
+---
+#### OPEN APP ON HEROKU CLOUD APP
 
-
+Click [here](https://fiap-ongs.herokuapp.com/) to check UI **Thymeleaf**, on Heroku Cloud App.
