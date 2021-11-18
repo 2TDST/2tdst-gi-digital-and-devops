@@ -1,8 +1,11 @@
 version: "3.8"
 
 services:
-  mysqldb:
-    image: mysql:5.7
+  db:
+    container_name: db
+    build:
+      context: db
+      dockerfile: Dockerfile
     restart: unless-stopped
     env_file: ./.env
     environment:
@@ -13,12 +16,11 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  ods-backend:
+  web:
+    container_name: web
     depends_on:
-      - mysqldb
+      - db
     build: .
-#    external_links:
-#      - ods-frontend
     restart: on-failure
     env_file: ./.env
     ports:

@@ -1,6 +1,6 @@
 FROM maven:3.8.1-jdk-11 AS BUILD
 
-LABEL HubSlashInformationCorp <devops@slashicorp.com.br>
+LABEL maintainer="SLASHICORP <devops@slashicorp.com.br>"
 
 COPY . .
 

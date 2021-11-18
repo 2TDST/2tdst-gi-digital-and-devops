@@ -14,17 +14,17 @@
 
 #### TECHNOLOGIES:
 - Spring Boot
-- JPA  
+- JPA
 - Hibernate
 - [Java JDK (v8+)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Maven (v3+)](https://maven.apache.org/download.cgi)
 - MySQL
 - Thymeleaf
 
-#### APPLICATION PURPOSE: 
+#### APPLICATION PURPOSE:
 <ul>
     The purpose of this application is to provide an API with Brazilian ONGs data by type of segment,
-    providing the user with next versions, NGO data by region and contact information. 
+    providing the user with next versions, Brazilian ONGs data by region and contact information. 
     This API should provide serialized data from raw tables of registration information 
     for regulated Brazilian ONGs so that you can work with their data.
 </ul>

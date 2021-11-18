@@ -1,0 +1,25 @@
+name: 'Heroku CI'
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build, Push and Deploy to Heroku
+        id: heroku
+        uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0
+        with:
+          email: ${{ secrets.HEROKU_EMAIL }}
+          api_key: ${{ secrets.HEROKU_API_KEY }}
+          docker_compose_file: './docker-compose.yml'
+          heroku_apps: '[{"imagename":"registry.heroku.com/slashiongs/web","appname":"slashiongs","apptype":"web"},{"imagename":"registry.heroku.com/slashiongs/db","appname":"slashiongs","apptype":"db"}]'
