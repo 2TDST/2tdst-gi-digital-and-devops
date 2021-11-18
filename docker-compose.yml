@@ -27,9 +27,9 @@ services:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:$CLEARDB_DATABASE_URL",
-        "spring.datasource.username" : "$MYSQLDB_USER",
-        "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
+        "spring.datasource.url"  : "jdbc:${{ secrets.CLEARDB_DATABASE_URL }}",
+        "spring.datasource.username" : "${{ secrets.MYSQLDB_USER }}",
+        "spring.datasource.password" : "${{ secrets.MYSQLDB_ROOT_PASSWORD }}",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update",
         "logging.level.org.hibernate.SQL" : "DEBUG",
