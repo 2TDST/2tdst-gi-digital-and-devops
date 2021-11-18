@@ -22,4 +22,4 @@ jobs:
           email: ${{ secrets.HEROKU_EMAIL }}
           api_key: ${{ secrets.HEROKU_API_KEY }}
           docker_compose_file: 'docker-compose.yml'
-          heroku_apps: '[{"imagename":"registry.heroku.com/slashiongs/web","appname":"slashiongs","apptype":"web"},{"imagename":"registry.heroku.com/slashiongs/db","appname":"slashiongs","apptype":"db"}]'
+          heroku_apps: '[{"imagename":"registry.heroku.com/boiling-savannah-80164/web","appname":"boiling-savannah-80164","apptype":"web"},{"imagename":"registry.heroku.com/boiling-savannah-80164/db","appname":"boiling-savannah-80164","apptype":"db"}]'
