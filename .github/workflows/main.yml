@@ -21,5 +21,5 @@ jobs:
         with:
           email: ${{ secrets.HEROKU_EMAIL }}
           api_key: ${{ secrets.HEROKU_API_KEY }}
-          docker_compose_file: '../../docker-compose.yml'
+          docker_compose_file: 'docker-compose.yml'
           heroku_apps: '[{"imagename":"registry.heroku.com/slashiongs/web","appname":"slashiongs","apptype":"web"},{"imagename":"registry.heroku.com/slashiongs/db","appname":"slashiongs","apptype":"db"}]'
