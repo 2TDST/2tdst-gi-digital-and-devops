@@ -18,7 +18,7 @@ public class Ongs {
     private String firstName;
 
     @Column(name = "addres_name")
-    private String addresName;
+    private String addressName;
 
     @Column(name = "email")
     private String email;
@@ -39,12 +39,12 @@ public class Ongs {
         this.firstName = firstName;
     }
 
-    public String getAddresName() {
-        return addresName;
+    public String getAddressName() {
+        return addressName;
     }
 
-    public void setAddresName(String addresName) {
-        this.addresName = addresName;
+    public void setAddressName(String addressName) {
+        this.addressName = addressName;
     }
 
     public String getEmail() {

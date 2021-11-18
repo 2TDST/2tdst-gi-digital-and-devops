@@ -3,10 +3,11 @@
 ![FIAP-2TDST](https://img.shields.io/badge/FIAP-2TDST-blueviolet?style=flat-square)
 ![project-global_impact](https://img.shields.io/badge/project-global_impact-blueviolet?style=flat-square)
 ![spring-boot](https://img.shields.io/badge/spring-boot-yellowgreen?style=flat-square)
+![spring-mvc](https://img.shields.io/badge/spring-mvc-yellowgreen?style=flat-square)
 ![Java-JDK](https://img.shields.io/badge/Java-JDK-red?style=flat-square)
 ![framework-hibernate](https://img.shields.io/badge/framework-hibernate-yellow?style=flat-square)
 ![template_engine-thymeleaf](https://img.shields.io/badge/template_engine-thymeleaf-brightgreen?style=flat-square)
-![persistence-jpa](https://img.shields.io/badge/persistence-jpa-yellow?style=flat-square)
+![spring_data-jpa](https://img.shields.io/badge/spring_data-jpa-yellow?style=flat-square)
 ![community-mysql](https://img.shields.io/badge/community-mysql-orange?style=flat-square)
 ---
 #### SQUAD: SLASHICORP
@@ -38,6 +39,10 @@
     This API should provide serialized data from raw tables of registration information 
     for regulated Brazilian ONGs so that you can work with their data.
 </ul>
+
+#### THE DIAGRAM SHOWS THE APPLICATION FLOW OF OUR SPRING MVC WEB APPLICATION WITH THYMELEAF:
+
+![ongs-diagram](imgs/ongs-diagram.drawio.png)
 
 ---
 #### REQUIREMENTS INSTALLATION PER DISTRO
