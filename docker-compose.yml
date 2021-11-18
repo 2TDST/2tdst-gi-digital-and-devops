@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  db:
+#  db:
 #    container_name: db
 #    build:
 #      context: db
@@ -22,19 +22,19 @@ services:
       - db
     build: .
     restart: on-failure
-    env_file: ./.env
-    ports:
-      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
-    environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:${{ secrets.CLEARDB_DATABASE_URL }}",
-        "spring.datasource.username" : "${{ secrets.MYSQLDB_USER }}",
-        "spring.datasource.password" : "${{ secrets.MYSQLDB_ROOT_PASSWORD }}",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update",
-        "logging.level.org.hibernate.SQL" : "DEBUG",
-        "logging.level.org.hibernate.type" : "TRACE"
-      }'
+#    env_file: ./.env
+#    ports:
+#      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
+#    environment:
+#      SPRING_APPLICATION_JSON: '{
+#        "spring.datasource.url"  : "jdbc:$CLEARDB_DATABASE_URL",
+#        "spring.datasource.username" : "$MYSQLDB_USER",
+#        "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
+#        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+#        "spring.jpa.hibernate.ddl-auto" : "update",
+#        "logging.level.org.hibernate.SQL" : "DEBUG",
+#        "logging.level.org.hibernate.type" : "TRACE"
+#      }'
     volumes:
       - .m2:/root/.m2
     stdin_open: true
